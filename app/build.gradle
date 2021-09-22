@@ -1,8 +1,7 @@
-    apply plugin: 'com.android.application'
+apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-
         clinify {
             storeFile file('/home/aniket/Desktop/clinify.jks')
             storePassword 'clinify'
@@ -11,7 +10,7 @@ android {
         }
 
         clinify_new {
-            storeFile file('/home/aniket/Documents/clinify-2021/clinify_new.jks')
+            storeFile file('/home/aniket/StudioProjects/CLINIFIE/clinify_new.jks')
             storePassword 'clinify'
             keyAlias 'clinify'
             keyPassword 'clinify'

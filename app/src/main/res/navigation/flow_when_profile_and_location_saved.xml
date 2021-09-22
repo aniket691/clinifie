@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_main_dash_board_to_helpCleanerFragment"
             app:destination="@id/helpCleanerFragment" />
+        <action
+            android:id="@+id/action_main_dash_board_to_upload_cleaner"
+            app:destination="@id/upload_cleaner" />
     </fragment>
 
     <fragment

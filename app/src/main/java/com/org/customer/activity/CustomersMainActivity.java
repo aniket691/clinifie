@@ -323,7 +323,7 @@ public class CustomersMainActivity extends AppCompatActivity implements
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.getValue() != null) {
-                            navController.navigate(R.id.help);
+                            navController.navigate(R.id.action_mainActivitys_to_help);
                             drawerLayout.closeDrawers();
                         } else {
                             navController.navigate(R.id.showMessage);

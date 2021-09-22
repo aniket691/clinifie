@@ -204,8 +204,8 @@ public class UploadCleaner extends Fragment {
                             Cleaner imageUploadInfo = new Cleaner(name, "true", address, contact_number, userid);
                             //String ImageUploadId = databaseReference.push().getKey();
                             databaseReference.child(userid).setValue(imageUploadInfo);
-                            NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_cleaner);
-                            navController.navigate(R.id.action_upload_cleaner_to_cleaner_save_location);
+                         /*   NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_cleaner);
+                            navController.navigate(R.id.action_upload_cleaner_to_cleaner_save_location);*/
                         }
                     });
         } else {

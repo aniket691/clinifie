@@ -8,6 +8,8 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <include layout="@layout/app_bar_main_cleaner" />
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -17,10 +19,9 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_cleaner"
         app:itemHorizontalPadding="20dp"
-        app:itemIconTint="#673AB7"
         app:itemIconPadding="20dp"
         app:menu="@menu/activity_main_drawer_cleaner" />
 
-    <include layout="@layout/app_bar_main_cleaner" />
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

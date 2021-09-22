@@ -154,7 +154,7 @@ public class CleanerMainActivity extends AppCompatActivity {
                 break;
 
             case R.id.edit_profile:
-                navController.navigate(R.id.upload_cleaner);
+                navController.navigate(R.id.action_main_dash_board_to_upload_cleaner);
                 break;
 
             case R.id.privacy_policy_cleaner:
