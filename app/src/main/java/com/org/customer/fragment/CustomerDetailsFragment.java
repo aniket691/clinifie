@@ -1,6 +1,7 @@
 package com.org.customer.fragment;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -76,9 +77,8 @@ public class CustomerDetailsFragment extends Fragment implements View.OnClickLis
     Button recharge;
 
     //customer info
-    DatabaseReference databaseReference,dbref;
+    DatabaseReference databaseReference, dbref;
     DatabaseReference rootRef;
-
     TextView planStatus3;
     TextView planStatus4;
     TextView days;
@@ -86,15 +86,18 @@ public class CustomerDetailsFragment extends Fragment implements View.OnClickLis
     TextView time;
     private String month_year_string;
     private StorageReference storage_reference = null;
-
-
-    SharedPreferences.Editor editor;
+    private SharedPreferences sharedPreferences1;
+    private SharedPreferences sharedPreferences2;
     private Handler h = new Handler();
+    SharedPreferences.Editor editor;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPreferences1 = getActivity().getSharedPreferences("SharedPrefs", MODE_PRIVATE);
+        sharedPreferences2 = getActivity().getSharedPreferences("myKey", MODE_PRIVATE);
+
     }
 
 
@@ -110,30 +113,37 @@ public class CustomerDetailsFragment extends Fragment implements View.OnClickLis
         cleanerImage = v.findViewById(R.id.myCleanerImage);
         days = v.findViewById(R.id.days);
         recharge = v.findViewById(R.id.recharge_cus_det);
-
         whatsapp = v.findViewById(R.id.whatsapp);
         phone = v.findViewById(R.id.phone);
         info = v.findViewById(R.id.info);
-
-        //status_image = v.findViewById(R.id.status_image);
         status_text = v.findViewById(R.id.status_text);
 
         storage_reference = FirebaseStorage.getInstance().getReference();
-
-
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         }
-
         databaseReference = FirebaseDatabase.getInstance().getReference();
         rootRef = databaseReference.child("Customers").child("profile").child(userId);
 
-        if (getActivity() != null) {
-            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("SharedPrefs", MODE_PRIVATE);
-            editor = sharedPreferences.edit();
-        }
+        Animation anim = AnimationUtils.loadAnimation(getActivity(), R.anim.top_animation);
+        Animation anim2 = AnimationUtils.loadAnimation(getActivity(), R.anim.fadein);
+        anim2.setRepeatCount(-1);
+        cleanerImage.setAnimation(anim);
+        days.setAnimation(anim2);
 
+        recharge.setOnClickListener(this);
+        whatsapp.setOnClickListener(this);
+        phone.setOnClickListener(this);
+        info.setOnClickListener(this);
+
+        return v;
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
         readData(new FirebaseCallback() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -141,7 +151,13 @@ public class CustomerDetailsFragment extends Fragment implements View.OnClickLis
             public void onCallBack(Customer customer) {
 
 
-                if (customer != null && customer.getTimeStamp() != null) {
+                if (customer.getMy_cleaner() != null &&
+                        customer.getCar_color() != null &&
+                        customer.getCar_number() != null &&
+                        customer.getContact_number() != null &&
+                        customer.getTimeStamp() != null &&
+                        customer.getDate() != null
+                        && customer.getCar_model() != null) {
 
                     my_cleaner = customer.getMy_cleaner();
 
@@ -164,11 +180,8 @@ public class CustomerDetailsFragment extends Fragment implements View.OnClickLis
                         }
                     });
 
-                    SharedPreferences sharedPreferences;
-
                     if (getActivity() != null) {
-                        sharedPreferences = getActivity().getSharedPreferences("SharedPrefs", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor = sharedPreferences1.edit();
                         editor.putString("carNum", customer.getCar_number());
                         editor.putString("carModel", customer.getCar_model());
                         editor.putString("customername", customer.getName());
@@ -237,7 +250,7 @@ public class CustomerDetailsFragment extends Fragment implements View.OnClickLis
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                                     if (snapshot.hasChildren() == false) {
                                         if (isAdded()) {
-                                           // status_image.setImageResource(R.drawable.ic_about_nav);
+                                            // status_image.setImageResource(R.drawable.ic_about_nav);
                                             status_text.setText("not done");
                                         }
                                     } else {
@@ -256,19 +269,6 @@ public class CustomerDetailsFragment extends Fragment implements View.OnClickLis
                 }
             }
         });
-
-
-        Animation anim = AnimationUtils.loadAnimation(getActivity(), R.anim.top_animation);
-        Animation anim2 = AnimationUtils.loadAnimation(getActivity(), R.anim.fadein);
-        anim2.setRepeatCount(-1);
-        cleanerImage.setAnimation(anim);
-        days.setAnimation(anim2);
-        //status_image.setAnimation(anim2);
-        recharge.setOnClickListener(this);
-        whatsapp.setOnClickListener(this);
-        phone.setOnClickListener(this);
-        info.setOnClickListener(this);
-        return v;
 
     }
 
@@ -305,10 +305,7 @@ public class CustomerDetailsFragment extends Fragment implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-
-
         if (v.getId() == R.id.whatsapp) {
-
             DatabaseReference databaseReferences = FirebaseDatabase.getInstance().getReference();
             readData(new FirebaseCallback() {
                 @Override
@@ -388,10 +385,10 @@ public class CustomerDetailsFragment extends Fragment implements View.OnClickLis
                 @Override
                 public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                     String value = snapshot.child("my_cleaner").getValue().toString();
-                  //  planStatus1.setText(value);
-                   // Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
-                    SharedPreferences sharedPref =getActivity().getSharedPreferences("myKey", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPref.edit();
+                    //  planStatus1.setText(value);
+                    // Toast.makeText(getActivity(), "1", Toast.LENGTH_SHORT).show();
+                    sharedPreferences2 = getActivity().getSharedPreferences("myKey", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences2.edit();
                     editor.putString("value", value);
                     editor.apply();
                 }

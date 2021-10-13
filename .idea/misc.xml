@@ -5,8 +5,12 @@
       <map>
         <entry key="app/src/main/res/layout-v23/app_bar_main_cleaner.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/layout/activity_cleaner_main.xml" value="0.16742654508611957" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21603260869565216" />
         <entry key="app/src/main/res/layout/activity_main_dashboard.xml" value="0.34427083333333336" />
+        <entry key="app/src/main/res/layout/activity_upload_cleaner.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_cleaner_info.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_help.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_verify_phone.xml" value="0.22" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/menu/activity_main_drawer_cleaner.xml" value="0.34427083333333336" />
         <entry key="app/src/main/res/menu/toolbar_menu.xml" value="0.34427083333333336" />

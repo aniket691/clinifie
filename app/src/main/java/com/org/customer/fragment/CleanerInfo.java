@@ -95,27 +95,36 @@ public class CleanerInfo extends Fragment {
         }
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("myKey", MODE_PRIVATE);
-        String value = sharedPreferences.getString("value","");
-       // name.setText(value);
+        String value = sharedPreferences.getString("value", "");
+        // name.setText(value);
 
 
-            databaseReference_cleaner.child(value)
-                    .addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+        databaseReference_cleaner.child(value)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+
+                        if (snapshot.child("name").getValue() != null &&
+                                snapshot.child("address").getValue() != null &&
+                                snapshot.child("contact_number").getValue() != null) {
                             String value1 = snapshot.child("name").getValue().toString();
                             name.setText(value1);
                             String value2 = snapshot.child("address").getValue().toString();
                             address.setText(value2);
                             String value3 = snapshot.child("contact_number").getValue().toString();
                             phone.setText(value3);
+                        } else {
+                            name.setText("please wait...");
+                            address.setText("please wait...");
+                            phone.setText("please wait...");
                         }
+                    }
 
-                        @Override
-                        public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
 
-                        }
-                    });
+                    }
+                });
 
         image_cleaner = v.findViewById(R.id.myCleanerImage);
 

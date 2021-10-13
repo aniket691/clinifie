@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.org.clinify">
 
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.org.clinify">
+
+    <!-- PERMISSION DATA-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -11,6 +13,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- APP DATA-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +22,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- ACTIVITY DATA-->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
 
         <activity
             android:name="com.org.common.SplashScreen"
@@ -33,7 +40,6 @@
         <activity
             android:name="com.org.common.ChooseCleanerCustomer"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.org.common.VerifyPhoneActivity"
             android:screenOrientation="portrait" />
@@ -42,19 +48,19 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.org.customer.activity.CustomersMainActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.org.cleaner.activitys.CleanerMainActivity"
             android:screenOrientation="portrait" />
 
+
+        <!-- META DATA-->
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="com.razorpay.ApiKey"
             android:value="rzp_live_ILgsfZCZoFIKMb" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />

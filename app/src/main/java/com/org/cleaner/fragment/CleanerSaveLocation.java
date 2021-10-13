@@ -148,25 +148,16 @@ public class CleanerSaveLocation extends Fragment implements OnMapReadyCallback,
         Mapbox.getInstance(getActivity(), getString(R.string.access_token));
 
         v = inflater.inflate(R.layout.fragment_cleaner_save_location, container, false);
-
         mapView = v.findViewById(R.id.mapView);
-
         mapView.onCreate(savedInstanceState);
-
         mapView.getMapAsync(this);
-
         latlng_global = new LatLng(-90.0, 90);
-
         navController = Navigation.findNavController(getActivity(),
                 R.id.nav_host_fragment_cleaner);
-
         geoFire = new GeoFire(drivers_available);
         button = v.findViewById(R.id.button4);
         button.setOnClickListener(this);
-
         user_id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-
         SharedPreferences sharedPreferencesMaps = getActivity().getSharedPreferences("SharedPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferencesMaps.edit();
         editor.putString("check", "true");
@@ -211,21 +202,17 @@ public class CleanerSaveLocation extends Fragment implements OnMapReadyCallback,
                 setUpSource(style);
                 // Set up a new symbol layer for displaying the searched location's feature coordinates
                 setupLayer(style);
-
-
-
-
                 //initialize symbol manager
                 symbolManager = new SymbolManager(mapView, mapboxMap, style);
                 symbolManager.setIconAllowOverlap(true);
                 symbolManager.setIconIgnorePlacement(true);
 
                 //create symbol
-                symbolStart = symbolManager.create(new SymbolOptions()
-                        .withLatLng(takestanLatLong)
-                        .withIconImage(RED_MARKER_ICON_ID)
-                        .withSymbolSortKey(5.0f)
-                        .withIconSize(1.5f));
+//                symbolStart = symbolManager.create(new SymbolOptions()
+//                        .withLatLng(takestanLatLong)
+//                        .withIconImage(RED_MARKER_ICON_ID)
+//                        .withSymbolSortKey(5.0f)
+//                        .withIconSize(1.5f));
 
 
             }
@@ -237,21 +224,21 @@ public class CleanerSaveLocation extends Fragment implements OnMapReadyCallback,
         //get the camera position
         latlng_global = mapboxMap.getCameraPosition().target;
         //set the symbol icon for move
-        symbolStart.setIconImage(COMPASS_ICON_ID);
+        //symbolStart.setIconImage(COMPASS_ICON_ID);
         //set the camera new latlng for symbol
-        symbolStart.setLatLng(latlng_global);
-        symbolManager.update(symbolStart);
+        //symbolStart.setLatLng(latlng_global);
+        //symbolManager.update(symbolStart);
     }
 
     @Override
     public void onCameraIdle() {
         if (symbolStart != null) {
             //set the icon when move is finished
-            symbolStart.setIconImage(RED_MARKER_ICON_ID);
-            symbolManager.update(symbolStart);
-            Toast.makeText(getActivity(), latlng_global.getLatitude() +
-                    "\n"
-                    + latlng_global.getLongitude(), Toast.LENGTH_SHORT).show();
+            //symbolStart.setIconImage(RED_MARKER_ICON_ID);
+            //symbolManager.update(symbolStart);
+            //Toast.makeText(getActivity(), latlng_global.getLatitude() +
+            //        "\n"
+            //        + latlng_global.getLongitude(), Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -305,27 +292,20 @@ public class CleanerSaveLocation extends Fragment implements OnMapReadyCallback,
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_AUTOCOMPLETE) {
-
             // Retrieve selected location's CarmenFeature
             CarmenFeature selectedCarmenFeature = PlaceAutocomplete.getPlace(data);
-
             // Create a new FeatureCollection and add a new Feature to it using selectedCarmenFeature above.
             // Then retrieve and update the source designated for showing a selected location's symbol layer icon
-
             if (mapboxMap != null) {
-
                 Style style = mapboxMap.getStyle();
                 if (style != null) {
-
                     GeoJsonSource source = style.getSourceAs(geojsonSourceLayerId);
                     if (source != null) {
                         source.setGeoJson(FeatureCollection.fromFeatures(
                                 new Feature[]{Feature.fromJson(selectedCarmenFeature.toJson())}));
                     }
-
                     location = new LatLng(((Point) selectedCarmenFeature.geometry()).latitude(),
                             ((Point) selectedCarmenFeature.geometry()).longitude());
-
                     // Move map camera to the selected location
                     mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(
                             new CameraPosition.Builder()

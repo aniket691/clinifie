@@ -41,10 +41,10 @@ import java.io.IOException;
 import static android.app.Activity.RESULT_OK;
 
 
-public class UploadCleaner extends Fragment {
+public class UploadCleaner extends Fragment implements View.OnClickListener {
 
 
-    private Button btnbrowse, btnupload;
+    private Button btnbrowse, btnupload,edit;
     private EditText txtdata, txtdata2;
     private ImageView imgview;
     private Uri FilePathUri;
@@ -82,6 +82,7 @@ public class UploadCleaner extends Fragment {
         databaseReference = FirebaseDatabase.getInstance().getReference("Cleaner").child("profile");
         btnbrowse = v.findViewById(R.id.btnbrowse);
         btnupload = v.findViewById(R.id.btnupload);
+        edit = v.findViewById(R.id.edit_button);
         txtdata = v.findViewById(R.id.txtdata);
         txtdata2 = v.findViewById(R.id.txtdata2);
         txtdata3 = v.findViewById(R.id.txtdata3);
@@ -133,6 +134,7 @@ public class UploadCleaner extends Fragment {
 
         progressDialog = new ProgressDialog(getContext());
         storageReference2 = FirebaseStorage.getInstance().getReference();
+        edit.setOnClickListener(this);
 
         btnbrowse.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -204,6 +206,8 @@ public class UploadCleaner extends Fragment {
                             Cleaner imageUploadInfo = new Cleaner(name, "true", address, contact_number, userid);
                             //String ImageUploadId = databaseReference.push().getKey();
                             databaseReference.child(userid).setValue(imageUploadInfo);
+                            txtdata.setEnabled(false);
+                            txtdata2.setEnabled(false);
                          /*   NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_cleaner);
                             navController.navigate(R.id.action_upload_cleaner_to_cleaner_save_location);*/
                         }
@@ -213,4 +217,11 @@ public class UploadCleaner extends Fragment {
         }
     }
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.edit_button){
+            txtdata.setEnabled(true);
+            txtdata2.setEnabled(true);
+        }
+    }
 }

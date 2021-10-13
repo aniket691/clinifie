@@ -148,21 +148,14 @@ public class CustomerSaveLocation extends Fragment
 
 
         Mapbox.getInstance(getActivity(), getString(R.string.access_token));
-
         v = inflater.inflate(R.layout.fragment_cleaner_save_location, container, false);
-
         mapView = v.findViewById(R.id.mapView);
-
         mapView.onCreate(savedInstanceState);
-
         mapView.getMapAsync(this);
-
         latlng_global = new LatLng(-90.0, 90);
-
         geoFire = new GeoFire(drivers_available);
         button = v.findViewById(R.id.button4);
         button.setOnClickListener(this);
-
         load_bar = v.findViewById(R.id.load_bar);
         SharedPreferences sharedPreferencesMaps = getActivity().getSharedPreferences("SharedPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferencesMaps.edit();
@@ -299,25 +292,25 @@ public class CustomerSaveLocation extends Fragment
 
 
                 //get symbol image from drawable
-                style.addImage(RED_MARKER_ICON_ID,
-                        BitmapUtils.getBitmapFromDrawable(getResources()
-                                .getDrawable(R.drawable.mapbox_marker_icon_default)));
+//                style.addImage(RED_MARKER_ICON_ID,
+//                        BitmapUtils.getBitmapFromDrawable(getResources()
+//                                .getDrawable(R.drawable.mapbox_marker_icon_default)));
 
-                style.addImage(COMPASS_ICON_ID,
-                        BitmapUtils.getBitmapFromDrawable(getResources()
-                                .getDrawable(R.drawable.mapbox_compass_icon)));
+//                style.addImage(COMPASS_ICON_ID,
+//                        BitmapUtils.getBitmapFromDrawable(getResources()
+//                                .getDrawable(R.drawable.mapbox_compass_icon)));
 
                 //initialize symbol manager
-                symbolManager = new SymbolManager(mapView, mapboxMap, style);
-                symbolManager.setIconAllowOverlap(true);
-                symbolManager.setIconIgnorePlacement(true);
+//                symbolManager = new SymbolManager(mapView, mapboxMap, style);
+//                symbolManager.setIconAllowOverlap(true);
+//                symbolManager.setIconIgnorePlacement(true);
 
                 //create symbol
-                symbolStart = symbolManager.create(new SymbolOptions()
-                        .withLatLng(takestanLatLong)
-                        .withIconImage(RED_MARKER_ICON_ID)
-                        .withSymbolSortKey(5.0f)
-                        .withIconSize(1.5f));
+//                symbolStart = symbolManager.create(new SymbolOptions()
+//                        .withLatLng(takestanLatLong)
+//                        .withIconImage(RED_MARKER_ICON_ID)
+//                        .withSymbolSortKey(5.0f)
+//                        .withIconSize(1.5f));
 
 
             }
@@ -329,22 +322,22 @@ public class CustomerSaveLocation extends Fragment
         //get the camera position
         latlng_global = mapboxMap.getCameraPosition().target;
         //set the symbol icon for move
-        symbolStart.setIconImage(COMPASS_ICON_ID);
+        //symbolStart.setIconImage(COMPASS_ICON_ID);
         //set the camera new latlng for symbol
-        symbolStart.setLatLng(latlng_global);
-        symbolManager.update(symbolStart);
+        //symbolStart.setLatLng(latlng_global);
+        //symbolManager.update(symbolStart);
     }
 
     @Override
     public void onCameraIdle() {
-        if (symbolStart != null) {
-            //set the icon when move is finished
-            symbolStart.setIconImage(RED_MARKER_ICON_ID);
-            symbolManager.update(symbolStart);
-            /*Toast.makeText(getActivity(), latlng_global.getLatitude() +
-                    "\n"
-                    + latlng_global.getLongitude(), Toast.LENGTH_SHORT).show();*/
-        }
+//        if (symbolStart != null) {
+//            set the icon when move is finished
+//            symbolStart.setIconImage(RED_MARKER_ICON_ID);
+//            symbolManager.update(symbolStart);
+//            Toast.makeText(getActivity(), latlng_global.getLatitude() +
+//                    "\n"
+//                    + latlng_global.getLongitude(), Toast.LENGTH_SHORT).show();
+//        }
 
     }
 
