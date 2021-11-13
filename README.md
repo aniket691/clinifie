@@ -31,7 +31,7 @@ Daily car wash confirmation check
 <br>
 
 
-https://user-images.githubusercontent.com/58764738/139266627-dfe2db20-deb5-4801-8990-5a6523362c5b.mp4
+<video src='https://user-images.githubusercontent.com/58764738/139266627-dfe2db20-deb5-4801-8990-5a6523362c5b.mp4' width=180/>
 
 <img src="app/images/126812758-c9ea5e30-68d6-4732-a3ed-e472b3d440b8.jpg" width="100">
 
