@@ -1,6 +1,7 @@
-
-![google-play-badge][(https://user-images.githubusercontent.com/58764738/233033154-7cb66eff-e032-46f7-8010-6a94c82a1c69.png)](https://play.google.com/store/apps/details?id=com.org.clinify)
-
+<a href="https://play.google.com/store/apps/details?id=com.org.clinify">
+    <img alt="Get it on Google Play"
+        src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
+</a>  
 
 # Clinifie App
 An Android app using Android, Firebase using MVC architecture
