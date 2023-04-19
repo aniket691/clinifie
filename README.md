@@ -1,5 +1,5 @@
 
-![google-play-badge](https://user-images.githubusercontent.com/58764738/233033154-7cb66eff-e032-46f7-8010-6a94c82a1c69.png | width=100)
+![google-play-badge][(https://user-images.githubusercontent.com/58764738/233033154-7cb66eff-e032-46f7-8010-6a94c82a1c69.png)](https://play.google.com/store/apps/details?id=com.org.clinify)
 
 
 # Clinifie App
