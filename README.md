@@ -21,5 +21,5 @@ You can install the App from above google play batch.
     
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/aniket691/RecipeApp/master/app/src/main/assets/Image1.jpg" height="500" width="250">             <img src="https://raw.githubusercontent.com/aniket691/RecipeApp/master/app/src/main/assets/image2.jpg" height="500" width="250">                  <img src="https://raw.githubusercontent.com/aniket691/RecipeApp/master/app/src/main/assets/image3.jpg" height="500" width="250">
+<img src="https://raw.githubusercontent.com/aniket691/CLINIFIE/main/app/images/126812758-c9ea5e30-68d6-4732-a3ed-e472b3d440b8.jpg" height="500" width="250">          <img src="https://raw.githubusercontent.com/aniket691/CLINIFIE/main/app/images/126813448-20685b77-1d06-4e2f-8a5b-1740296a6aca.jpg" height="500" width="250">     <img src="https://raw.githubusercontent.com/aniket691/CLINIFIE/main/app/images/126813970-49d2c5ab-59fc-4d03-a3d6-91a84ee68731.jpg" height="500" width="250">
 
