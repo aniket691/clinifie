@@ -7,7 +7,6 @@ A recipe Android app is a mobile application that provides users with a wide ran
 An unofficial Android client for Mealie. It enables you to easily access your recipes using an Android device. The main advantage over website is that recipe data is stored locally and can be accessed without the Internet connection.
 
 ## Installation
-There are three ways:
 Install it with Google Play using the badge above.
     
 ## Screenshots
