@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/aniket691/CLINIFIE/main/app/images/google-play-badge.png">
+
 
 # Clinifie App
 An Android app using Android, Firebase using MVC architecture
