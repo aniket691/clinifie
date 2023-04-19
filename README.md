@@ -1,4 +1,5 @@
-<img src="https://raw.githubusercontent.com/aniket691/CLINIFIE/main/app/images/google-play-badge.png">
+
+![google-play-badge](https://user-images.githubusercontent.com/58764738/233033154-7cb66eff-e032-46f7-8010-6a94c82a1c69.png | width=100)
 
 
 # Clinifie App
