@@ -1,7 +1,7 @@
 
 
 # Recipie App
-! A recipe Android app is a mobile application that provides users with a wide range of recipes and cooking-related information. The app can allow users to search for recipes by ingredients, cooking time, meal type, and dietary restrictions such as vegan, vegetarian, gluten-free, or keto.
+A recipe Android app is a mobile application that provides users with a wide range of recipes and cooking-related information. The app can allow users to search for recipes by ingredients, cooking time, meal type, and dietary restrictions such as vegan, vegetarian, gluten-free, or keto.
 
 ## What is this
 An unofficial Android client for Mealie. It enables you to easily access your recipes using an Android device. The main advantage over website is that recipe data is stored locally and can be accessed without the Internet connection.
