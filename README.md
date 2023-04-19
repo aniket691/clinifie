@@ -8,10 +8,7 @@ An unofficial Android client for Mealie. It enables you to easily access your re
 
 ## Installation
 There are three ways:
-1. Install it with Google Play using the badge above.
-2. Install it with F-droid using the badge above.
-3. Download the latest apk from the releases page.
-
+Install it with Google Play using the badge above.
     
 ## Screenshots
 <img src="https://raw.githubusercontent.com/aniket691/CLINIFIE/main/app/images/126812758-c9ea5e30-68d6-4732-a3ed-e472b3d440b8.jpg?token=GHSAT0AAAAAACBTDAQA66XVH65IEDFRCPX4ZB7SZDQ" height="500" width="250"> <img src="https://raw.githubusercontent.com/aniket691/CLINIFIE/main/app/images/126813448-20685b77-1d06-4e2f-8a5b-1740296a6aca.jpg?token=GHSAT0AAAAAACBTDAQB3F4PSOUNK67LIDGGZB7S6BA" height="500" width="250"> <img src="https://raw.githubusercontent.com/aniket691/CLINIFIE/main/app/images/126813970-49d2c5ab-59fc-4d03-a3d6-91a84ee68731.jpg?token=GHSAT0AAAAAACBTDAQAOEPDO3IXJL36ODROZB7S6WQ" height="500" width="250">
