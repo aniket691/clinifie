@@ -8,7 +8,7 @@
 # Clinifie App
 Introducing "Clinifie": An innovative Android application leveraging Firebase and MVC architecture. Seamlessly connect with healthcare providers, offering comprehensive medical services. Experience real-time appointment scheduling and secure health data management. Built on MVC design principles for scalability, maintenance, and user-friendly interface. Elevate your healthcare journey with Clinifie.
 
-## What is this
+## Description
 1. Clinifie is your go-to Android application offering top-tier Car Washing Services with utmost convenience.
 2. Cleaners can easily register their services, ensuring a seamless connection between them and potential customers.
 3. Customers can effortlessly locate nearby cleaners within an 8km radius, ensuring prompt service availability.
