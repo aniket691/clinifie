@@ -1,5 +1,5 @@
 <!-- Clinifie Logo -->
-<img src="https://your-image-link-here.com/logo.png" alt="Clinifie Logo" height="80" />
+<!-- <img src="https://your-image-link-here.com/logo.png" alt="Clinifie Logo" height="80" />  -->
 
 <a href="https://play.google.com/store/apps/details?id=com.org.clinify">
     <img alt="Get it on Google Play"
