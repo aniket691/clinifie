@@ -1,12 +1,12 @@
 <!-- Clinifie Logo -->
 <!-- <img src="https://your-image-link-here.com/logo.png" alt="Clinifie Logo" height="80" />  -->
-
+<center>
 <a href="https://play.google.com/store/apps/details?id=com.org.clinify">
     <img alt="Get it on Google Play"
          height="60"
          src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
 </a>
-
+<center>
 # Clinifie: Simplifying Car Care with Cutting-edge Convenience 🚗💧
 
 Welcome to **Clinifie**, the ultimate solution for hassle-free car washing services. Designed with a robust MVC architecture and powered by Firebase, Clinifie revolutionizes vehicle maintenance. Here's why it's the perfect choice for your car care needs:
