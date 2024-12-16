@@ -28,20 +28,6 @@ Welcome to <b>Clinifie</b>, the ultimate solution for hassle-free car washing se
 
 ---
 
-## 🚀 Get Started Now!
-Ready to experience the future of car care? 
-
-### **Download Clinifie from the Google Play Store**  
-<p align="center">
-    <a href="https://play.google.com/store/apps/details?id=com.org.clinify">
-        <img alt="Get it on Google Play"
-             height="100"
-             src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
-    </a>
-</p>
-
----
-
 ## 📸 Sneak Peek
 
 Take a look at some screenshots from the app to see how Clinifie makes car care effortless:
