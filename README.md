@@ -1,5 +1,5 @@
 <h1 align="center">Clinifie: AI-Powered Car Care for Unrivaled Convenience 🚗💧</h1>
-<h1 align="left"> Deployed Link: [CLINIFIE] - COMING SOON</h1>
+<h1 align="ecnter"> Deployed Link: [CLINIFIE] - COMING SOON</h1>
 <p align="center">
 Welcome to <b>Clinifie</b>, the ultimate AI-enhanced solution for hassle-free car washing services. Designed with a robust MVC architecture and powered by Firebase, Clinifie leverages artificial intelligence to revolutionize vehicle maintenance, making it smarter, faster, and more personalized than ever before.
 </p>
